@@ -4,3 +4,6 @@ dist/
 __pycache__/
 *.py[cod]
 .env
+# Curated training/evaluation data and generated reports stay local.
+data/public/CareerCorpus.xlsx
+reports/

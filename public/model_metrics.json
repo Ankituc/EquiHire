@@ -1,0 +1,249 @@
+{
+  "task": "predict mean expert-assessed resume-to-role relevance score",
+  "score_range": [
+    0,
+    1
+  ],
+  "rows": 302,
+  "unique_resume_groups": 301,
+  "domains": {
+    "Banking": 50,
+    "Finance": 50,
+    "Accountant": 51,
+    "Teacher": 50,
+    "Apparel": 50,
+    "Research Assistant": 51
+  },
+  "evaluation": "5-fold GroupKFold cross-validation; repeated resume IDs remain in one fold",
+  "target": "mean of Annotator-1 and Annotator-2 scores",
+  "uncertainty_method": "95% cluster-bootstrap interval over out-of-fold absolute errors, resampling resume IDs",
+  "annotator_agreement": {
+    "mae": 0.1062,
+    "pearson_correlation": 0.7923
+  },
+  "models": {
+    "mean_baseline": {
+      "mae": 0.138,
+      "rmse": 0.1894,
+      "r2": -0.0137,
+      "mae_ci_95": [
+        0.1237,
+        0.153
+      ],
+      "fold_metrics": [
+        {
+          "mae": 0.1251,
+          "rmse": 0.1626,
+          "r2": -0.0689
+        },
+        {
+          "mae": 0.1401,
+          "rmse": 0.1893,
+          "r2": -0.0
+        },
+        {
+          "mae": 0.1438,
+          "rmse": 0.2098,
+          "r2": -0.0247
+        },
+        {
+          "mae": 0.1426,
+          "rmse": 0.2043,
+          "r2": -0.0619
+        },
+        {
+          "mae": 0.1385,
+          "rmse": 0.1772,
+          "r2": -0.0528
+        }
+      ]
+    },
+    "decision_tree": {
+      "mae": 0.1034,
+      "rmse": 0.1481,
+      "r2": 0.3801,
+      "mae_ci_95": [
+        0.092,
+        0.1163
+      ],
+      "fold_metrics": [
+        {
+          "mae": 0.089,
+          "rmse": 0.1145,
+          "r2": 0.4701
+        },
+        {
+          "mae": 0.1237,
+          "rmse": 0.1888,
+          "r2": 0.0055
+        },
+        {
+          "mae": 0.0817,
+          "rmse": 0.1054,
+          "r2": 0.7416
+        },
+        {
+          "mae": 0.1398,
+          "rmse": 0.1958,
+          "r2": 0.0247
+        },
+        {
+          "mae": 0.0828,
+          "rmse": 0.1066,
+          "r2": 0.6188
+        }
+      ],
+      "mae_by_domain": {
+        "Accountant": {
+          "rows": 51,
+          "mae": 0.0702
+        },
+        "Apparel": {
+          "rows": 50,
+          "mae": 0.2121
+        },
+        "Banking": {
+          "rows": 50,
+          "mae": 0.1065
+        },
+        "Finance": {
+          "rows": 50,
+          "mae": 0.0826
+        },
+        "Research Assistant": {
+          "rows": 51,
+          "mae": 0.0467
+        },
+        "Teacher": {
+          "rows": 50,
+          "mae": 0.1041
+        }
+      }
+    },
+    "knn": {
+      "mae": 0.0833,
+      "rmse": 0.129,
+      "r2": 0.5292,
+      "mae_ci_95": [
+        0.0725,
+        0.094
+      ],
+      "fold_metrics": [
+        {
+          "mae": 0.0749,
+          "rmse": 0.1127,
+          "r2": 0.4867
+        },
+        {
+          "mae": 0.0813,
+          "rmse": 0.1211,
+          "r2": 0.5908
+        },
+        {
+          "mae": 0.0901,
+          "rmse": 0.1609,
+          "r2": 0.397
+        },
+        {
+          "mae": 0.096,
+          "rmse": 0.1326,
+          "r2": 0.5525
+        },
+        {
+          "mae": 0.0744,
+          "rmse": 0.1119,
+          "r2": 0.5806
+        }
+      ],
+      "mae_by_domain": {
+        "Accountant": {
+          "rows": 51,
+          "mae": 0.0527
+        },
+        "Apparel": {
+          "rows": 50,
+          "mae": 0.1758
+        },
+        "Banking": {
+          "rows": 50,
+          "mae": 0.1224
+        },
+        "Finance": {
+          "rows": 50,
+          "mae": 0.048
+        },
+        "Research Assistant": {
+          "rows": 51,
+          "mae": 0.0343
+        },
+        "Teacher": {
+          "rows": 50,
+          "mae": 0.0683
+        }
+      }
+    },
+    "ridge": {
+      "mae": 0.1024,
+      "rmse": 0.1501,
+      "r2": 0.3629,
+      "mae_ci_95": [
+        0.0906,
+        0.1152
+      ],
+      "fold_metrics": [
+        {
+          "mae": 0.0903,
+          "rmse": 0.126,
+          "r2": 0.3587
+        },
+        {
+          "mae": 0.0971,
+          "rmse": 0.1446,
+          "r2": 0.4163
+        },
+        {
+          "mae": 0.1084,
+          "rmse": 0.1719,
+          "r2": 0.3121
+        },
+        {
+          "mae": 0.1102,
+          "rmse": 0.1639,
+          "r2": 0.3164
+        },
+        {
+          "mae": 0.1062,
+          "rmse": 0.1401,
+          "r2": 0.3426
+        }
+      ],
+      "mae_by_domain": {
+        "Accountant": {
+          "rows": 51,
+          "mae": 0.0615
+        },
+        "Apparel": {
+          "rows": 50,
+          "mae": 0.2574
+        },
+        "Banking": {
+          "rows": 50,
+          "mae": 0.0993
+        },
+        "Finance": {
+          "rows": 50,
+          "mae": 0.0715
+        },
+        "Research Assistant": {
+          "rows": 51,
+          "mae": 0.053
+        },
+        "Teacher": {
+          "rows": 50,
+          "mae": 0.0734
+        }
+      }
+    }
+  },
+  "limitations": "Predicts expert-assessed broad role-category relevance, not hiring outcomes or skill proficiency. Only six categories and 302 professionally crafted/anonymized examples are represented; performance may not generalize to arbitrary roles or real-world applicant resumes. Confidence intervals describe resampling variability in this dataset, not deployment guarantees."
+}

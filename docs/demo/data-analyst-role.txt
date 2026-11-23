@@ -1,0 +1,12 @@
+SAMPLE JOB DESCRIPTION — DATA ANALYST (FICTIONAL)
+
+Responsibilities
+- Query and validate business data with SQL.
+- Build repeatable analysis and reporting workflows with Python.
+- Create and maintain stakeholder dashboards in Power BI or Tableau.
+- Use descriptive statistics to explain trends and data quality issues.
+- Communicate findings clearly and document assumptions.
+
+Suggested skills: SQL, Python, Power BI, Tableau, Excel, Statistics, Data visualization.
+
+This is a synthetic example for demonstrating EquiHire. It is not a real job posting.
